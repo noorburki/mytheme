@@ -16,8 +16,9 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
+	<section>
+		<div class="container">
+			<div class="row">
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -59,10 +60,12 @@ get_header(); ?>
 
 		<?php endif; // end have_posts() check ?>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+	
 
 <?php get_sidebar(); ?>
+		</div>
+	</div>
+</section>
 <?php get_footer(); ?>
 
 
