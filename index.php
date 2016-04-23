@@ -63,9 +63,9 @@ get_header(); ?>
 	
 
 <?php get_sidebar(); ?>
-</div>
 		</div>
-	</section>
+	</div>
+</section>
 <?php get_footer(); ?>
 
 

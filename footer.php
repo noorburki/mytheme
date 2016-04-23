@@ -28,7 +28,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="assets/images/home/iframe2.png" alt="" />
+										<img src="<?php bloginfo('template_directory'); ?>/assets/images/home/iframe2.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
