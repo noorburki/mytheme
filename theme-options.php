@@ -32,8 +32,8 @@
         //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
         'allow_sub_menu'       => true,
         // Show the sections below the admin menu item or not
-        'menu_title'           => __( 'Theme Options', 'redux-framework-demo' ),
-        'page_title'           => __( 'Theme Options', 'redux-framework-demo' ),
+        'menu_title'           => __( 'Theme Options' ),
+        'page_title'           => __( 'Theme Options' ),
         // You will need to generate a Google API key to use this feature.
         // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
         'google_api_key'       => '',
@@ -136,19 +136,19 @@
     $args['admin_bar_links'][] = array(
         'id'    => 'redux-docs',
         'href'  => 'http://docs.reduxframework.com/',
-        'title' => __( 'Documentation', 'redux-framework-demo' ),
+        'title' => __( 'Documentation' ),
     );
 
     $args['admin_bar_links'][] = array(
         //'id'    => 'redux-support',
         'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
-        'title' => __( 'Support', 'redux-framework-demo' ),
+        'title' => __( 'Support' ),
     );
 
     $args['admin_bar_links'][] = array(
         'id'    => 'redux-extensions',
         'href'  => 'reduxframework.com/extensions',
-        'title' => __( 'Extensions', 'redux-framework-demo' ),
+        'title' => __( 'Extensions' ),
     );
 
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
@@ -181,13 +181,13 @@
         } else {
             $v = str_replace( '-', '_', $args['opt_name'] );
         }
-        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo' ), $v );
+        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>' ), $v );
     } else {
-        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo' );
+        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>' );
     }
 
     // Add content after the form.
-    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo' );
+    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>' );
 
     Redux::setArgs( $opt_name, $args );
 
@@ -202,19 +202,19 @@
     $tabs = array(
         array(
             'id'      => 'redux-help-tab-1',
-            'title'   => __( 'Theme Information 1', 'redux-framework-demo' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+            'title'   => __( 'Theme Information 1' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>' )
         ),
         array(
             'id'      => 'redux-help-tab-2',
-            'title'   => __( 'Theme Information 2', 'redux-framework-demo' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+            'title'   => __( 'Theme Information 2' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>' )
         )
     );
     Redux::setHelpTab( $opt_name, $tabs );
 
     // Set the help sidebar
-    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'redux-framework-demo' );
+    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>' );
     Redux::setHelpSidebar( $opt_name, $content );
 
 
@@ -238,50 +238,287 @@
 
     // -> START Basic Fields
     Redux::setSection( $opt_name, array(
-        'title'  => __( 'General Settings', 'redux-framework-demo' ),
-        'id'     => 'basic',
-        'desc'   => __( 'Basic field with no subsections.', 'redux-framework-demo' ),
-        'icon'   => 'el el-home',
+        'title'  => __( 'General Settings' ),
+        'id'     => 'general-settings',
+        'desc'   => __( 'Here you can change the General theme Settings' ),
+        'icon'   => 'el el-adjust-alt',
         'fields' => array(
 			array(
-			'id'       => 'opt-media',
-			'type'     => 'media', 
-			'url'      => true,
-			'title'    => __('Media w/ URL', 'redux-framework-demo'),
-			'desc'     => __('Basic media uploader with disabled URL input field.', 'redux-framework-demo'),
-			'subtitle' => __('Upload any media using the WordPress native uploader', 'redux-framework-demo'),
-			
-		),
-            array(
-                'id'       => 'header-textarea',
-                'type'     => 'textarea',
-                'title'    => __( 'Header Code', 'redux-framework-demo' ),
-                'desc'     => __( 'The following code will add to the head tag. Useful if you need to add additional codes such as CSS or JS.', 'redux-framework-demo' ),
-                'hint'     => array(
-                    'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
-                )
+                'id'       => 'custom-favicon',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Custom Favicon' ),
+                'compiler' => 'true',
+                'default'  => array( 'url' =>false ),
+                
             ),
 			array(
-                'id'       => 'footer-textarea',
-                'type'     => 'textarea',
-                'title'    => __( 'Footer Code', 'redux-framework-demo' ),
+                'id'       => 'custom-gravatar',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Custom Gravatar' ),
+                'compiler' => 'true',
+                'default'  => array( 'url' =>false ),
+      		 ),
+			 array(
+                'id'       => 'head-code-editor',
+               	'type'     => 'ace_editor',
+                'title'    => __( 'Header Code' ),
+				'mode' => 'javascript',
+				'theme'	   =>'chrome',
+                'desc'     => __( 'The following code will add to the head tag. Useful if you need to add additional codes such as CSS or JS.' ),
+				'compiler' => true,
+            ),
+			array(
+                'id'       => 'footer-code-editor',
+               	'type'     => 'ace_editor',
+                'title'    => __( 'Footer Code' ),
+				'mode' => 'javascript',
+				'theme'	   =>'chrome',
                 'desc'     => __( 'The following code will add to the footer before the closing body tag. Useful if you need to add Javascript or tracking code.' ),
-                'hint'     => array(
-                    'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
-                )
+				'compiler' => true,
             ),
-			array(
-    'id'       => 'opt-color',
-    'type'     => 'color',
-    'title'    => __('Body Background Color', 'redux-framework-demo'), 
-    'subtitle' => __('Pick a background color for the theme (default: #fff).', 'redux-framework-demo'),
-    'default'  => '#FFFFFF',
-    'validate' => 'color',
-)
-        )
-		
-    ) );
+		 )
+	) );
 	
+	  Redux::setSection( $opt_name, array(
+        'title' => __( 'Header Settings' ),
+		'heading'=>__( 'Header Top area Settings' ),
+        'id'    => 'header-top-settings',
+        'desc'  => __( 'Here you can change header settings' ),
+        'icon'  => '',
+		'fields' => array(
+						array(
+							'id'       => 'phone-number',
+							'type'     => 'text',
+							'title'    => __( 'Contact Number' ),
+							'desc'     => __( 'Enter your contact number' ),
+						),
+						array(
+							'id'       => 'contact-number-on',
+							'type'     => 'switch',
+							'title'    => __( 'Contact Number' ),
+							'subtitle' => __( 'show or hide contact number!' ),
+							'on'	   =>'Show',
+							'off'      =>'Hide',
+							'default'  => true,
+						), 
+						array(
+							'id'       => 'email-address',
+							'type'     => 'text',
+							'title'    => __( 'Email Address' ),
+							'desc'     => __( 'Enter your Email Address' ),
+						),
+						array(
+							'id'       => 'email-show-hide',
+							'type'     => 'switch',
+							'title'    => __( 'Email Address' ),
+							'subtitle' => __( 'show or hide email address!' ),
+							'on'	   =>'Show',
+							'off'      =>'Hide',
+							'default'  => true,
+						), 
+						
+						array(
+							'id'       => 'logo-settings',
+							'type'     => 'radio',
+							'title'    => __('Logo Settings'), 
+							'options'  => array(
+								'1' => 'Custom Image Logo', 
+								'2' => 'Display Site Title', 
+							),
+						
+						),
+					array(
+						'id'       => 'logo-icon',
+						'type'     => 'media',
+						'url'      => true,
+						'title'    => __( 'Logo Image' ),
+						'compiler' => 'true',
+						'default'  => array( 'url' =>false ),
+						'hint'     => array(
+							'content' => 'Upload a logo image, or enter URL to an image if it is already uploaded. the theme default logo gets applied if the input field is left blank.'
+							),
+					 ),
+					 array(
+						'id'             => 'logo-margin',
+						'type'           => 'spacing',
+						'output'         => array('.logo'),
+						'mode'           => 'margin',
+						'units'          => 'px',
+						'units_extended' => 'false',
+						'title'          => __('Logo Margin'),
+						'desc'           => __('Give  margin to logo from Top, Right, Bottom, Left in pixels.'),
+						'default'            => array(
+							'margin-top'     => '0', 
+							'margin-right'   => '0', 
+							'margin-bottom'  => '0', 
+							'margin-left'    => '0',
+						)
+					),
+					 array(
+						'id'       => 'country-name',
+						'type'     => 'multi_text',
+						'title'    => __( 'Enter Country Name' ),
+						'hint'     => array(
+							'content' => 'Enter here more then one country name by clicking on add more button to add different country name at a time.'
+							),
+					),
+					array(
+						'id'       => 'country-currency',
+						'type'     => 'multi_text',
+						'title'    => __( 'Enter Currency Name' ),
+						'hint'     => array(
+							'content' => 'Enter here more then one currency name by clicking on add more button to add different currency name at a time.'
+							),
+					),
+					array(
+							'id'       => 'email-on-off',
+							'type'     => 'switch',
+							'title'    => __( 'Show / Hide' ),
+							'desc'	   => __( 'show or hide country and currency.' ),
+							'on'	   =>'Show',
+							'off'      =>'Hide',
+							'default'  => true,
+						), 
+						'output'	   =>array('.btn-group '),
+				)
+				
+			) 
+		);
+		Redux::setSection( $opt_name, array(
+        'title'      => __( 'Styling' ),
+		'heading'	 => __( 'Theme Color and Settings' ),
+        'id'         => 'theme-color',
+		'icon' 		 => 'el el-brush',
+        'fields'     => array(
+						array(
+							'id'        => 'background-color',
+							'type'      => 'background',
+							'title'     => __('Background Color'),
+							'subtitle'  => __('Pick a background color.'),
+							'default'   => '#ffffff',
+							'output'    => array('body')
+						),
+						array(
+						'id'       => 'style-link-color',
+						'type'     => 'link_color',
+						'title'    => __('Links Color'),
+						'desc'     => __('Here you can change links color.'),
+						'default'  => array(
+							'regular'  => '#696763', 
+							'hover'    => '#fdb45e',
+							'active'   => '#fdb45e', 
+						),
+						'output'    => array('a'),
+					),
+					array(
+						'id'       => 'top-menu-color',
+						'type'     => 'background',
+						'title'    => __('Main menu background color'),
+						'desc'     => __('Here you can change main menu background color.'),
+						'default'  => '#FFFFFF',
+						'output'    => array('.mainmenu'),
+					),
+					array(
+						'id'       => 'main-menu-link-color',
+						'type'     => 'link_color',
+						'title'    => __('Menu Links Color'),
+						'desc'     => __('Here you can change main menu links color.'),
+						'default'  => array(
+							'regular'  => '#696763', 
+							'hover'    => '#fdb45e',
+							'active'   => '#fdb45e', 
+						),
+						'output'    => array('.mainmenu ul li a'),
+					),
+					array(
+						'id'       => 'header-background-color',
+						'type'     => 'background',
+						'title'    => __('Header Background color'),
+						'desc'     => __('Here you can change header background color.'),
+						'default'  => '#ffffff',
+						'output'    => array('#header'),
+					),
+					array(
+						'id'       => 'header-top-area-background',
+						'type'     => 'background',
+						'title'    => __('Top Header'),
+						'desc'     => __('Here you can change top header background color.'),
+						'default'  => '#f0f0e9',
+						'output'    => array('.header_top'),
+					),
+					array(
+						'id'       => 'footer-background-color',
+						'type'     => 'background',
+						'title'    => __('Footer Background color'),
+						'desc'     => __('Here you can change footer background color.'),
+						'default'  => '#f0f0e9',
+						'output'    => array('#footer'),
+					),
+					array(
+						'id'       => 'custom-css-editor',
+						'type'     => 'ace_editor',
+						'title'    => __( 'Custom CSS' ),
+						'mode' => 'css',
+						'theme'	   =>'chrome',
+						'desc'     => __( 'Enter your custom css code here ' ),
+						'compiler' => true,
+					),
+       			 ),
+				 
+   	 		)
+	  );
+	  	Redux::setSection( $opt_name, array(
+						'title' => __( 'Typography' ),
+						'heading'=>__( 'Main Typography' ),
+						'id'    => 'typography-settings',
+						'icon'  => 'el el-font',
+						'fields' => array(
+									array(
+					'id'          => 'general-typography',
+					'type'        => 'typography', 
+					'title'       => __('General Typography'),
+					'google'      => true, 
+					'font-backup' => true,
+					'output'      => array(''),
+					'units'       =>'px',
+					'subtitle'    => __('Typography option with each property can be called individually.', 'redux-framework-demo'),
+					'default'     => array(
+						'color'       => '#696763', 
+						'font-style'  => '300', 
+						'font-family' => '"Roboto",sans-serif', 
+						'google'      => true,
+						'font-size'   => '16px', 
+						'line-height' => '40'
+					),
+				),
+						
+				)
+				
+			) 
+		);
+		Redux::setSection( $opt_name, array(
+        'title' => __( 'Footer Settings' ),
+		'heading'=>__( 'Footer Widgets layout' ),
+        'id'    => 'footer-settings',
+        'icon'  => '',
+		'fields' => array(
+					array(
+							'id'       => 'footer-widgets-on-off',
+							'type'     => 'switch',
+							'title'    => __( 'Footer Widgets' ),
+							'on'	   =>'Show',
+							'off'      =>'Hide',
+							'default'  => true,
+						), 
+						
+				)
+				
+			) 
+		);
+		
+		
 
     /*
      * <--- END SECTIONS
