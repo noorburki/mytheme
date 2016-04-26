@@ -481,16 +481,17 @@
 					'title'       => __('General Typography'),
 					'google'      => true, 
 					'font-backup' => true,
-					'output'      => array(''),
+					'output'      => array('body p'),
 					'units'       =>'px',
-					'subtitle'    => __('Typography option with each property can be called individually.', 'redux-framework-demo'),
+					'subtitle'    => __('Typography option with each property can be called individually.'),
 					'default'     => array(
 						'color'       => '#696763', 
 						'font-style'  => '300', 
 						'font-family' => '"Roboto",sans-serif', 
 						'google'      => true,
-						'font-size'   => '16px', 
-						'line-height' => '40'
+						'font-size'   => '14px', 
+						'line-height' => '0',
+						'units'       =>'px',
 					),
 				),
 						
