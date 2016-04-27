@@ -443,6 +443,21 @@
 						),
 						'output'    => array('.mainmenu ul li a'),
 					),
+					array( 
+						'id'       => 'products-menu-border',
+						'type'     => 'border',
+						'title'    => __('Products menu Border Option'),
+						'output'   => array('.category-tab ul'),
+						'desc'     => __('Change products menu border color.'),
+						'default'  => array(
+							'border-color'  => '#fe980f', 
+							'border-style'  => 'solid', 
+							'border-top'    => '0px', 
+							'border-right'  => '0px', 
+							'border-bottom' => '1px', 
+							'border-left'   => '0px'
+						)
+					),
 					array(
 						'id'       => 'header-background-color',
 						'type'     => 'background',
