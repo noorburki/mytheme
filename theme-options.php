@@ -293,6 +293,7 @@
 							'type'     => 'text',
 							'title'    => __( 'Contact Number' ),
 							'desc'     => __( 'Enter your contact number' ),
+							'output'   =>'.fa',
 						),
 						array(
 							'id'       => 'contact-number-on',
@@ -413,7 +414,7 @@
 						'output'    => array('a'),
 					),
 					array(
-						'id'       => 'top-menu-color',
+						'id'       => 'main-menu-background-color',
 						'type'     => 'background',
 						'title'    => __('Main menu background color'),
 						'desc'     => __('Here you can change main menu background color.'),
@@ -433,12 +434,32 @@
 						'output'    => array('.mainmenu ul li a'),
 					),
 					array(
+						'id'       => 'products-menu-background-color',
+						'type'     => 'background',
+						'title'    => __('Products menu background color'),
+						'desc'     => __('Here you can change products menu background color.'),
+						'default'  => '#40403e',
+						'output'    => array('.category-tab ul'),
+					),
+					array(
+						'id'       => 'products-menu-link-color',
+						'type'     => 'link_color',
+						'title'    => __('Products Menu Links Color'),
+						'desc'     => __('Here you can change products menu links color.'),
+						'default'  => array(
+							'regular'  => '#b3afa8', 
+							'hover'    => '#ffffff',
+							'active'   => '#ffffff', 
+						),
+						'output'    => array('.mainmenu ul li a'),
+					),
+					array(
 						'id'       => 'header-background-color',
 						'type'     => 'background',
 						'title'    => __('Header Background color'),
 						'desc'     => __('Here you can change header background color.'),
 						'default'  => '#ffffff',
-						'output'    => array('#header'),
+						'output'   => array('#header'),
 					),
 					array(
 						'id'       => 'header-top-area-background',
@@ -446,7 +467,7 @@
 						'title'    => __('Top Header'),
 						'desc'     => __('Here you can change top header background color.'),
 						'default'  => '#f0f0e9',
-						'output'    => array('.header_top'),
+						'output'   => array('.header_top'),
 					),
 					array(
 						'id'       => 'footer-background-color',
@@ -476,25 +497,175 @@
 						'icon'  => 'el el-font',
 						'fields' => array(
 									array(
-					'id'          => 'general-typography',
-					'type'        => 'typography', 
-					'title'       => __('General Typography'),
-					'google'      => true, 
-					'font-backup' => true,
-					'output'      => array('body p'),
-					'units'       =>'px',
-					'subtitle'    => __('Typography option with each property can be called individually.'),
-					'default'     => array(
+						'id'          => 'general-typography',
+						'type'        => 'typography', 
+						'title'       => __('General Typography'),
+						'google'      => true, 
+						'font-backup' => true,
+						'output'      => array('body p,.blog-post-area .single-blog-post p'),
+						'units'       =>'px',
+						'default'     => array(
 						'color'       => '#696763', 
-						'font-style'  => '300', 
-						'font-family' => '"Roboto",sans-serif', 
+						'font-weight'  => '300', 
+						'font-family' => 'Roboto', 
 						'google'      => true,
 						'font-size'   => '14px', 
-						'line-height' => '0',
+						
+						'font-backup' => 'Arial, Helvetica, sans-serif',
 						'units'       =>'px',
 					),
 				),
+						array(
+						'id'          => 'top-menu-typography',
+						'type'        => 'typography', 
+						'title'       => __('Top Menu'),
+						'google'      => true, 
+						'font-backup' => true,
+						'output'      => array('.shop-menu ul li a'),
+						'units'       =>'px',
+						'default'     => array(
+						'color'       => '#696763', 
+						'font-weight'  => '300', 
+						'font-family' => 'Roboto', 
+						'google'      => true,
+						'font-size'   => '14px', 
 						
+						'font-backup' => 'Arial, Helvetica, sans-serif',
+						'units'       =>'px',
+					),
+				),	
+						array(
+						'id'          => 'main-menu-typography',
+						'type'        => 'typography', 
+						'title'       => __('Main Menu'),
+						'google'      => true, 
+						'font-backup' => true,
+						'output'      => array('.mainmenu ul li a'),
+						'units'       =>'px',
+						'default'     => array(
+						'color'       => '#696763', 
+						'font-weight'  => '300', 
+						'font-family' => 'Roboto', 
+						'google'      => true,
+						'font-size'   => '14px', 
+						
+						'font-backup' => 'Arial, Helvetica, sans-serif',
+						'units'       =>'px',
+					),
+				),		
+						array(
+						'id'          => 'center-menu-typography',
+						'type'        => 'typography', 
+						'title'       => __('Products Menu'),
+						'google'      => true, 
+						'font-backup' => true,
+						'output'      => array('.category-tab ul li a'),
+						'units'       =>'px',
+						'default'     => array(
+						'color'       => '#b3afa8', 
+						'font-weight'  => '300', 
+						'font-family' => 'Roboto', 
+						'google'      => true,
+						'font-size'   => '14px', 
+						
+						'font-backup' => 'Arial, Helvetica, sans-serif',
+						'units'       =>'px',
+					),
+				),	
+						array(
+						'id'          => 'main-widgets-typography',
+						'type'        => 'typography', 
+						'title'       => __('Main SideBar'),
+						'google'      => true, 
+						'font-backup' => true,
+						'output'      => array('.category-products .panel-default .panel-heading .panel-title a,.brands-name .nav-stacked li a'),
+						'units'       =>'px',
+						'default'     => array(
+						'color'       => '#696763', 
+						'font-weight'  => '300', 
+						'font-family' => 'Roboto', 
+						'google'      => true,
+						'font-size'   => '14px', 
+						
+						'font-backup' => 'Arial, Helvetica, sans-serif',
+						'units'       =>'px',
+					),
+				),		
+						array(
+						'id'          => 'blogs-typography',
+						'type'        => 'typography', 
+						'title'       => __('Blog titles'),
+						'google'      => true, 
+						'font-backup' => true,
+						'output'      => array('.blog-post-area .single-blog-post h3'),
+						'units'       =>'px',
+						'default'     => array(
+						'color'       => '#696763', 
+						'font-weight'  => '500', 
+						'font-family' => 'Roboto', 
+						'google'      => true,
+						'font-size'   => '16px', 
+						
+						'font-backup' => 'Arial, Helvetica, sans-serif',
+						'units'       =>'px',
+					),
+				),		
+						array(
+						'id'          => 'footer-typography',
+						'type'        => 'typography', 
+						'title'       => __('Footer Typography'),
+						'google'      => true, 
+						'font-backup' => true,
+						'output'      => array('.single-widget ul li a'),
+						'units'       =>'px',
+						'default'     => array(
+						'color'       => '#8c8c88', 
+						'font-weight'  => '300', 
+						'font-family' => 'Roboto', 
+						'google'      => true,
+						'font-size'   => '14px', 
+						
+						'font-backup' => 'Arial, Helvetica, sans-serif',
+						'units'       =>'px',
+					),
+				),	
+						array(
+						'id'          => 'footer-title-typography',
+						'type'        => 'typography', 
+						'title'       => __('Footer Titles'),
+						'google'      => true, 
+						'font-backup' => true,
+						'output'      => array('.single-widget h2'),
+						'units'       =>'px',
+						'default'     => array(
+						'color'       => '#666663', 
+						'font-weight'  => '500', 
+						'font-family' => 'Roboto', 
+						'google'      => true,
+						'font-size'   => '16px', 
+						'font-backup' => 'Arial, Helvetica, sans-serif',
+						'units'       =>'px',
+					),
+				),	
+						array(
+						'id'          => 'main-h2-typography',
+						'type'        => 'typography', 
+						'title'       => __('All h2 titles'),
+						'google'      => true, 
+						'font-backup' => true,
+						'output'      => array('.left-sidebar h2, .brands_products h2,h2.title'),
+						'units'       =>'px',
+						'default'     => array(
+						'color'       => '#fe980f', 
+						'font-weight'  => '700', 
+						'font-family' => 'Roboto', 
+						'google'      => true,
+						'font-size'   => '18px', 
+						
+						'font-backup' => 'Arial, Helvetica, sans-serif',
+						'units'       =>'px',
+					),
+				),	
 				)
 				
 			) 
@@ -503,12 +674,144 @@
         'title' => __( 'Footer Settings' ),
 		'heading'=>__( 'Footer Widgets layout' ),
         'id'    => 'footer-settings',
-        'icon'  => '',
+        'icon'  => 'el el-road',
 		'fields' => array(
-					array(
+						array(
 							'id'       => 'footer-widgets-on-off',
 							'type'     => 'switch',
 							'title'    => __( 'Footer Widgets' ),
+							'on'	   =>'Show',
+							'off'      =>'Hide',
+							'default'  => true,
+						), 
+						array(
+							'id'       => 'select-footer-layout',
+							'type'     => 'select',
+							'title'    => __('Select Footer layouts'), 
+							'desc'     => __('Select colum to show in footer'),
+							'options'  => array(
+								'1' => 'One colum layout',
+								'2' => 'Two colum layout',
+								'3' => 'Three colum layout',
+								'4' => 'Four colum layout',
+								'5' => 'Five colum layout'
+							),
+							'default'  => '5',
+						),
+						array(
+							'id'=>'footer-text-one',
+							'type' => 'textarea',
+							'title' => __('Footer Text One'), 
+							'validate' => 'html_custom',
+							'allowed_html' => array(
+								'a' => array(
+									'href' => array(),
+									'title' => array()
+								),
+								'br' => array(),
+								'em' => array(),
+								'strong' => array()
+							)
+						),
+						array(
+							'id'=>'footer-text-two',
+							'type' => 'textarea',
+							'title' => __('Footer Text Two'),
+							'validate' => 'html_custom',
+							'allowed_html' => array(
+								'a' => array(
+									'href' => array(),
+									'title' => array()
+								),
+								'br' => array(),
+								'em' => array(),
+								'strong' => array()
+							)
+						),
+						
+				)
+				
+			) 
+		);
+		
+		
+		Redux::setSection( $opt_name, array(
+        'title' => __( 'Social Networking' ),
+		'heading'=>__( 'Social Networking' ),
+        'id'    => 'social-networking',
+        'icon'  => 'el el-link',
+		'fields' => array(
+						array(
+							'id'       => 'facebook-url',
+							'type'     => 'text',
+							'title'    => __('Facebook URL'),
+							'validate' => 'url',
+						),
+						array(
+							'id'       => 'twitter-url',
+							'type'     => 'text',
+							'title'    => __('Twitter URL'),
+							'validate' => 'url',
+						),
+						array(
+							'id'       => 'linkedin-url',
+							'type'     => 'text',
+							'title'    => __('LinkedIn URL'),
+							'validate' => 'url',
+						),
+						array(
+							'id'       => 'dribbble-url',
+							'type'     => 'text',
+							'title'    => __('Dribbble URL'),
+							'validate' => 'url',
+						),
+						array(
+							'id'       => 'google-plus-url',
+							'type'     => 'text',
+							'title'    => __('Google+ URL'),
+							'validate' => 'url',
+						),
+						array(
+							'id'       => 'youtube-url',
+							'type'     => 'text',
+							'title'    => __('Youtube URL'),
+							'validate' => 'url',
+						),
+						
+						
+				)
+				
+			) 
+		);
+		Redux::setSection( $opt_name, array(
+        'title' => __( 'Sidebars' ),
+		'heading'=>__( 'Sidebars' ),
+        'id'    => 'main-sidebars',
+        'icon'  => 'el el-tasks',
+		'fields' => array(
+					array(
+							'id'       => 'home-side-bar',
+							'type'     => 'switch',
+							'title'    => __( 'Disable on the homepage' ),
+							'subtitle' => __( 'show or hide sidebar on home page' ),
+							'on'	   =>'Show',
+							'off'      =>'Hide',
+							'default'  => true,
+						), 
+						array(
+							'id'       => 'product-sidebar',
+							'type'     => 'switch',
+							'title'    => __( 'Disable on the products page' ),
+							'subtitle' => __( 'show or hide sidebar on products page' ),
+							'on'	   =>'Show',
+							'off'      =>'Hide',
+							'default'  => true,
+						), 
+						array(
+							'id'       => 'post-side-bar',
+							'type'     => 'switch',
+							'title'    => __( 'Disable on  post' ),
+							'subtitle' => __( 'show or hide sidebar on posts' ),
 							'on'	   =>'Show',
 							'off'      =>'Hide',
 							'default'  => true,
@@ -518,9 +821,6 @@
 				
 			) 
 		);
-		
-		
-
     /*
      * <--- END SECTIONS
      */
