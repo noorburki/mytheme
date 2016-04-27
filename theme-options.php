@@ -320,16 +320,6 @@
 							'default'  => true,
 						), 
 						
-						array(
-							'id'       => 'logo-settings',
-							'type'     => 'radio',
-							'title'    => __('Logo Settings'), 
-							'options'  => array(
-								'1' => 'Custom Image Logo', 
-								'2' => 'Display Site Title', 
-							),
-						
-						),
 					array(
 						'id'       => 'logo-icon',
 						'type'     => 'media',
@@ -368,7 +358,7 @@
 					array(
 						'id'       => 'country-currency',
 						'type'     => 'multi_text',
-						'title'    => __( 'Enter Currency Name' ),
+						'title'    => __( 'Enter Currency' ),
 						'hint'     => array(
 							'content' => 'Enter here more then one currency name by clicking on add more button to add different currency name at a time.'
 							),
