@@ -351,6 +351,7 @@
 						'id'       => 'country-name',
 						'type'     => 'multi_text',
 						'title'    => __( 'Enter Country Name' ),
+						'output'   =>array('.dropdown-menu > li > a'),
 						'hint'     => array(
 							'content' => 'Enter here more then one country name by clicking on add more button to add different country name at a time.'
 							),
