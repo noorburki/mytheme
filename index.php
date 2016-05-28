@@ -19,6 +19,7 @@ get_header(); ?>
 	<section>
 		<div class="container">
 			<div class="row">
+            
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -62,7 +63,8 @@ get_header(); ?>
 
 	
 
-<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
+
 		</div>
 	</div>
 </section>
